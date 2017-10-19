@@ -20,20 +20,24 @@ return [
             'username' => env('DB_USERNAME'),
             'password' => env('DB_PASSWORD'),
             'dbname'   => env('DB_DATABASE', 'slayer'),
-            'charset'  => env('DB_CHARSET', 'utf8'),
+	    'charset'  => env('DB_CHARSET', 'utf8'),
+	    'options'  => [],
             'class'    => Phalcon\Db\Adapter\Pdo\Mysql::class,
         ],
 
         'sqlite' => [
-            'dbname'   => base_path('database/slayer.sqlite'),
+	    'dbname'   => base_path('database/slayer.sqlite'),
+	    'options'  => [],
             'class'    => Phalcon\Db\Adapter\Pdo\Sqlite::class,
         ],
 
-        'pgsql' => [
+	'pgsql' => [
+	    'active'   => false,
             'host'     => env('DB_HOST', 'localhost'),
             'username' => env('DB_USERNAME'),
             'password' => env('DB_PASSWORD'),
-            'dbname'   => env('DB_DATABASE', 'slayer'),
+	    'dbname'   => env('DB_DATABASE', 'slayer'),
+	    'options'  => [],
             'class'    => Phalcon\Db\Adapter\Pdo\Postgresql::class,
         ],
 
